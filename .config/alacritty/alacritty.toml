@@ -9,6 +9,7 @@ normal = { family = "FiraCode Nerd Font", style = "Regular" }
 [window]
 decorations_theme_variant = "Dark"
 padding = { x = 10, y = 5 }
+title = "Terminal"
 
 [env]
 TERM = "xterm-256color"
