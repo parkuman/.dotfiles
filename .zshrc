@@ -3,10 +3,6 @@ if [[ -f /usr/local/bin/acre_terminal_setup ]]; then
 fi
 eval "$(starship init zsh)"
 
-alias gst="git status"
-alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"
- 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
@@ -20,3 +16,11 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# aliases
+alias gst="git status"
+alias v="nvim"
+alias vi="nvim"
+
+# acre related
+alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"

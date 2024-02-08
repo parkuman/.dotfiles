@@ -1,2 +1,15 @@
 # Parker's dotfiles
-Thats it that's all :)
+
+clone the repo in `~` directory.
+
+requirements:
+1. stow
+2. nvim
+3. alacritty 
+
+then use stow to symlink the files
+
+```bash
+cd ~/.dotfiles/
+stow .
+```
