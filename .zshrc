@@ -21,6 +21,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias gst="git status"
 alias v="nvim"
 alias vi="nvim"
+alias lg="lazygit"
+alias sbrc="source ~/.zshrc"
 
 # acre related
 alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"
