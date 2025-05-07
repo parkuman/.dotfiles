@@ -17,12 +17,16 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# env variables
+source ~/.zshrc.env
+
 # aliases
 alias gst="git status"
 alias v="nvim"
 alias vi="nvim"
 alias lg="lazygit"
 alias sbrc="source ~/.zshrc"
+alias k=kubectl
 
 # acre related
 alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"
