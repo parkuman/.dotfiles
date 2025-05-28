@@ -1,0 +1,9 @@
+[user]
+  name = Parker Rowe
+  email = parker@prowe.ca
+
+[core]
+  preloadindex = true
+  compression = 9
+  whitespace = error
+
