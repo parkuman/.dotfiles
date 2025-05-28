@@ -28,5 +28,8 @@ alias lg="lazygit"
 alias sbrc="source ~/.zshrc"
 alias k=kubectl
 
+# aider
+alias aider="aider --config ~/.config/.aider.conf.yml"
+
 # acre related
 alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"
