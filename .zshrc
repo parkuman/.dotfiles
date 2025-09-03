@@ -23,6 +23,7 @@ alias k=kubectl
 # aider
 alias aider="aider --config ~/.config/.aider.conf.yml"
 
-# java version 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PATH="$JAVA_HOME/bin:$PATH"
+# import any work-specific zshrc files
+if [[ -f ~/.config/work/.zshrc ]]; then
+    source ~/.config/work/.zshrc
+fi
