@@ -1,21 +1,13 @@
-if [[ -f /usr/local/bin/acre_terminal_setup ]]; then
- source /usr/local/bin/acre_terminal_setup
-fi
+# starship
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# bun completions
-[ -s "/Users/parker/.bun/_bun" ] && source "/Users/parker/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # env variables
 source ~/.zshrc.env
@@ -31,5 +23,6 @@ alias k=kubectl
 # aider
 alias aider="aider --config ~/.config/.aider.conf.yml"
 
-# acre related
-alias awslog="aws-azure-login --profile acre --no-prompt mode=gui"
+# java version 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="$JAVA_HOME/bin:$PATH"
