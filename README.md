@@ -8,7 +8,7 @@ requirements:
 2. nvim
 3. ghostty
 4. tmux
-5. [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+5. [tmux plugin manager](https://github.com/tmux-plugins/tpm) (need to git clone this locally)
 
 then use stow to symlink the files
 
