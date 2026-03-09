@@ -20,9 +20,6 @@ alias lg="lazygit"
 alias sbrc="source ~/.zshrc"
 alias k=kubectl
 
-# aider
-alias aider="aider --config ~/.config/.aider.conf.yml"
-
 # import any work-specific zshrc files
 if [[ -f ~/.config/work/.zshrc ]]; then
     source ~/.config/work/.zshrc
