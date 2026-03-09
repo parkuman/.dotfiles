@@ -27,3 +27,5 @@ alias aider="aider --config ~/.config/.aider.conf.yml"
 if [[ -f ~/.config/work/.zshrc ]]; then
     source ~/.config/work/.zshrc
 fi
+
+export AISH_PROVIDER=anthropic
