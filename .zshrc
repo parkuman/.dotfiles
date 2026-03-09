@@ -29,3 +29,5 @@ if [[ -f ~/.config/work/.zshrc ]]; then
 fi
 
 export AISH_PROVIDER=anthropic
+for f in ~/scripts/*.sh; do source "$f"; done
+
