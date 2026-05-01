@@ -27,6 +27,7 @@ return {
       "c",
       "clojure",
       "diff",
+      "fennel",
       "go",
       "html",
       "javascript",
