@@ -21,7 +21,7 @@
   services.xserver.xkb.layout = "us";
 
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
 
 
@@ -40,6 +40,10 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
   };
 	
 
