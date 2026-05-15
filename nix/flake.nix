@@ -13,17 +13,26 @@
 			inputs.nixpkgs.follows = "nixpkgs";	
 		};
 
-    # nix-darwin = {
-    #   url = "github:LnL7/nix-darwin";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }:
+	outputs = { self, nixpkgs, home-manager, nix-darwin, ... }:
     let
       user = import ./lib/user.nix;
     in
     {
+      darwinConfigurations = {
+        parker-m3 = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = { inherit user; };
+          modules = [
+            ./hosts/macos/parker-m3/configuration.nix
+          ];   
+        };
+      };
       nixosConfigurations = {
         parker-desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux"; 
