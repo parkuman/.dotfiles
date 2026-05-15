@@ -93,13 +93,10 @@
     "steam"
     "steam-unwrapped"
   ];
+
   environment.systemPackages = with pkgs; [
-    vim
-    wget
     ghostty
-    git
-    zsh
-  ];
+  ] ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
 
 # fonts.packages = with pkgs; [
 #       nerd-fronts.jetbrains-mono

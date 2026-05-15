@@ -23,18 +23,6 @@ in
     };
 
     packages = with pkgs; [
-      # development
-      fzf
-      gcc
-      lazygit
-      neovim
-      nixpkgs-fmt
-      nodejs
-      opencode
-      ripgrep
-      starship
-      tmux
-
       # gaming
       discord
       mangohud
