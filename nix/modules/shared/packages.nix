@@ -1,11 +1,10 @@
 {pkgs, ...}:
 with pkgs; [
   btop
-  htop
-
   go
   gopls
-
+  htop
+  neovim
   ripgrep
   tmux
 ]
