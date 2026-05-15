@@ -5,6 +5,10 @@
   user,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    # specific to this machine
+  ] ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
+
   nix = {
     package = pkgs.nix;
 
@@ -29,6 +33,7 @@
   };
 
   system = {
+    # Turn off NIX_PATH warnings now that we're using flakes
     checks.verifyNixPath = false;
     primaryUser = user.username;
     stateVersion = 5;
