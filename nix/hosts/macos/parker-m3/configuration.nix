@@ -5,7 +5,6 @@
   user,
   ...
 }: {
-  # Setup user, packages, programs
   nix = {
     package = pkgs.nix;
 
