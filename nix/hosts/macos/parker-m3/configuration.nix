@@ -59,7 +59,6 @@
 
       trackpad = {
         Clicking = true;
-        TrackpadThreeFingerDrag = true;
       };
     };
   };
