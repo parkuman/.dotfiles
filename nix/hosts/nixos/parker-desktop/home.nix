@@ -19,6 +19,7 @@ in
     homeDirectory = "/home/${user.username}";
 
     sessionVariables = {
+      # proton pass cli won't start without this as it tries to use the native keyright
       PROTON_PASS_KEY_PROVIDER = "fs";
     };
 
@@ -52,7 +53,6 @@ in
     enableCompletion = true;
     initContent = ''
     source "${config.home.homeDirectory}/.dotfiles/.zshrc"
-    source "${config.home.homeDirectory}/.zshrc.env"
     '';
   };
   programs.starship = {
