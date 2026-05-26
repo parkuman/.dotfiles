@@ -39,9 +39,3 @@ for f in ~/.dotfiles/scripts/*.sh; do source "$f"; done
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/parker/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/parker/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/parker/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/parker/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
