@@ -34,11 +34,14 @@
 
   # Enable sound.
   services.pulseaudio.enable = false;
+  # hands out realtime scheduling priority to user processes on demand, used by Pipewire to prioritise audio
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
   };
-
 
   hardware.graphics = {
     enable = true;
