@@ -33,7 +33,7 @@ if [[ -f ~/.config/work/.zshrc ]]; then
 fi
 
 export AISH_PROVIDER=anthropic
-for f in ~/scripts/*.sh; do source "$f"; done
+for f in ~/.dotfiles/scripts/*.sh; do source "$f"; done
 
 # GPG
 export GPG_TTY="$(tty)"
