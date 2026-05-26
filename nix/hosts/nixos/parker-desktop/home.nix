@@ -6,12 +6,12 @@ let
   configs = {
     nvim = "nvim";
     ghostty = "ghostty";
-    tmux = "tmux";
     opencode = "opencode";
   };
 in
 
 {
+  imports = [ ../../../modules/shared/tmux.nix ];
   home = {
     stateVersion = "25.11";
 
@@ -31,6 +31,7 @@ in
 
       # other
       proton-pass-cli # not in 25.11
+      wl-clipboard # for programmatically copying to clipboard
 
       # audio
       easyeffects
