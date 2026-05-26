@@ -16,4 +16,5 @@ with pkgs; [
   vim
   wget
   zsh
+  zoxide
 ]

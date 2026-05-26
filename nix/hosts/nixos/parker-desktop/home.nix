@@ -61,6 +61,7 @@ in
     # TODO:
     # settings = pkgs.lib.importTOML ../starship.toml;
   };
+  programs.zoxide.enable = true;
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {

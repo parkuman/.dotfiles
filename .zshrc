@@ -1,6 +1,5 @@
-# starship
 eval "$(starship init zsh)"
-
+eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 # nvm
@@ -9,8 +8,16 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-# env variables
-source ~/.zshrc.env
+# env variables - fetched async to avoid startup delay
+_load_secrets() {
+  local api_key
+  api_key="$(pass-cli item view pass://-qWe2nBAInEUGU1geCss9a-z2-RMHxuCcDk9fKSjQ5I2Ta-kL8_y5Ym7dOPSd3TBsW8aPnQ7vjkeAoA55Nqc3A==/4gwUn7Hm7-k8avYy3RcSLm-JpnBa_DZUD4z5TicRmgrQdvpSfzNDK6eprL_5hS43Q0PuMa9v7J07_fi85gsCSw==/api_key 2>/dev/null)"
+  if [[ -n "$api_key" ]]; then
+    export ANTHROPIC_API_KEY="$api_key"
+    export OPENCODE_ANTHROPIC_API_KEY="$api_key"
+  fi
+}
+_load_secrets &!
 
 # aliases
 alias gst="git status"
