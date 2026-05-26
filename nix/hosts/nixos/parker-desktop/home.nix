@@ -11,7 +11,10 @@ let
 in
 
 {
-  imports = [ ../../../modules/apps/tmux ];
+  imports = [
+    ../../../modules/apps/tmux
+    ../../../modules/apps/gpu-screen-recorder
+  ];
   home = {
     stateVersion = "25.11";
 
