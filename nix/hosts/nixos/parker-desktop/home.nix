@@ -50,11 +50,8 @@ in
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-    shellAliases = {
-      gst = "git status";
-      v = "nvim";
-    };
     initContent = ''
+    source "${config.home.homeDirectory}/.dotfiles/.zshrc"
     source "${config.home.homeDirectory}/.zshrc.env"
     '';
   };
