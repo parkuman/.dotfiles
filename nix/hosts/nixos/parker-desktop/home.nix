@@ -11,7 +11,7 @@ let
 in
 
 {
-  imports = [ ../../../modules/shared/tmux.nix ];
+  imports = [ ../../../modules/apps/tmux ];
   home = {
     stateVersion = "25.11";
 
