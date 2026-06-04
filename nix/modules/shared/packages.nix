@@ -6,6 +6,7 @@ with pkgs; [
   go
   gopls
   htop
+  jq
   lazygit
   neovim
   nodejs
