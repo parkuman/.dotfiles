@@ -43,6 +43,8 @@
     alsa.support32Bit = true;
   };
 
+  services.tailscale.enable = true;
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
