@@ -21,6 +21,14 @@ stow .
 
 I manage my packages and such using Nix.
 
+### GPG
+
+Fetch the private key, then:
+
+```bash
+gpg --import private-key.asc
+```
+
 ### NixOS
 
 ```bash
