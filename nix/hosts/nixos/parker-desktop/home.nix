@@ -12,8 +12,9 @@ in
 
 {
   imports = [
-    ../../../modules/apps/tmux
+    ../../../modules/apps/gpg
     ../../../modules/apps/gpu-screen-recorder
+    ../../../modules/apps/tmux
   ];
   home = {
     stateVersion = "25.11";
