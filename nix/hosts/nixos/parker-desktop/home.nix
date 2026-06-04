@@ -34,6 +34,7 @@ in
       heroic
 
       # other
+      obsidian
       proton-pass-cli # not in 25.11
       wl-clipboard # for programmatically copying to clipboard
 

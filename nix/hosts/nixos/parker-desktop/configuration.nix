@@ -87,6 +87,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
+    "obsidian"
     "proton-pass-cli"
     "steam"
     "steam-unwrapped"
