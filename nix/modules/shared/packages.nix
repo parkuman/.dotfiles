@@ -2,6 +2,7 @@
 with pkgs;
 [
   btop
+  gcc
   fzf
   git
   go
