@@ -16,6 +16,6 @@ with pkgs; [
   tmux
   vim
   wget
-  zsh
   zoxide
+  zsh
 ]
