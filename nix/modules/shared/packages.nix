@@ -2,6 +2,7 @@
 with pkgs;
 [
   btop
+  cargo
   gcc
   fzf
   git
@@ -16,6 +17,7 @@ with pkgs;
   ripgrep
   starship
   tmux
+  unzip
   vim
   wget
   zoxide
