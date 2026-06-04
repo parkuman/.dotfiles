@@ -21,6 +21,12 @@ stow .
 
 I manage my packages and such using Nix.
 
+### NixOS
+
+```bash
+sudo nixos-rebuild switch --flake ~/.dotfiles/nix#parker-desktop
+```
+
 ### MacOS
 
 #### 1. Install deps
