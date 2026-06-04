@@ -72,8 +72,7 @@ in
   };
   programs.starship = {
     enable = true;
-    # TODO:
-    # settings = pkgs.lib.importTOML ../starship.toml;
+    settings = pkgs.lib.importTOML ../../../../.config/starship.toml;
   };
   programs.zoxide.enable = true;
 
