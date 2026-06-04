@@ -65,7 +65,8 @@ in
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-    initContent = ''
+    initContent = /* bash */ ''
+      # this is a weird hack so I can still use my zshrc on other machines but also on nix
       source "${config.home.homeDirectory}/.dotfiles/.zshrc"
     '';
   };
