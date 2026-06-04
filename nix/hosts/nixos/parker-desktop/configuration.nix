@@ -1,10 +1,15 @@
-{ config, lib, pkgs, user, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  user,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -25,9 +30,6 @@
     wayland.enable = true;
   };
   services.desktopManager.plasma6.enable = true;
-
-
-
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -53,7 +55,7 @@
   hardware.bluetooth = {
     enable = true;
   };
-	
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user.username} = {
     isNormalUser = true;
@@ -85,26 +87,33 @@
     "amdgpu.dpm=1"
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "discord"
-    "obsidian"
-    "proton-pass-cli"
-    "steam"
-    "steam-unwrapped"
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "discord"
+      "obsidian"
+      "proton-pass-cli"
+      "steam"
+      "steam-unwrapped"
+    ];
+
+  environment.systemPackages =
+    with pkgs;
+    [
+      ghostty
+    ]
+    ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
+
+  # fonts.packages = with pkgs; [
+  #       nerd-fronts.jetbrains-mono
+  # ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
-
-  environment.systemPackages = with pkgs; [
-    ghostty
-  ] ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
-
-# fonts.packages = with pkgs; [
-#       nerd-fronts.jetbrains-mono
-# ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # DO NOT CHANGE. Installed April 2nd 2026
   system.stateVersion = "25.11";
 
 }
-

@@ -11,7 +11,7 @@ in
     plugins = with pkgs.tmuxPlugins; [
       sensible
       vim-tmux-navigator
-      gruvbox 
+      gruvbox
     ];
 
     extraConfig = ''

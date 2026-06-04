@@ -4,17 +4,27 @@
   pkgs,
   user,
   ...
-}: {
-  environment.systemPackages = with pkgs; [
-    # specific to this machine
-  ] ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
+}:
+{
+  environment.systemPackages =
+    with pkgs;
+    [
+      # specific to this machine
+    ]
+    ++ (import ../../../modules/shared/packages.nix { inherit pkgs; });
 
   nix = {
     package = pkgs.nix;
 
     settings = {
-      trusted-users = ["@admin" "${user.username}"];
-      substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org"];
+      trusted-users = [
+        "@admin"
+        "${user.username}"
+      ];
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org"
+      ];
     };
 
     gc = {

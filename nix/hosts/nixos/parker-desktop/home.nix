@@ -1,4 +1,9 @@
-{ config, pkgs, user, ... }:
+{
+  config,
+  pkgs,
+  user,
+  ...
+}:
 
 let
   dotfiles_config = "${config.home.homeDirectory}/.dotfiles/.config";
@@ -61,7 +66,7 @@ in
     autosuggestion.enable = true;
     enableCompletion = true;
     initContent = ''
-    source "${config.home.homeDirectory}/.dotfiles/.zshrc"
+      source "${config.home.homeDirectory}/.dotfiles/.zshrc"
     '';
   };
   programs.starship = {
@@ -71,11 +76,9 @@ in
   };
   programs.zoxide.enable = true;
 
-  xdg.configFile = builtins.mapAttrs
-    (name: subpath: {
-      source = create_symlink "${dotfiles_config}/${subpath}";
-      recursive = true;
-    })
-    configs;
+  xdg.configFile = builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles_config}/${subpath}";
+    recursive = true;
+  }) configs;
 
 }

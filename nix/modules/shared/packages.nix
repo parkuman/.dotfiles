@@ -1,5 +1,6 @@
-{pkgs, ...}:
-with pkgs; [
+{ pkgs, ... }:
+with pkgs;
+[
   btop
   fzf
   git

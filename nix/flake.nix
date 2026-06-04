@@ -1,25 +1,32 @@
 {
-	description = "Parker's Nix Setup";
+  description = "Parker's Nix Setup";
 
-	inputs = {
-		# shorthand for github.com/NixOS/nixpkgs...
-		# nixpkgs.url = "nixpkgs/nixos-25.11";
-		nixpkgs.url = "nixpkgs/nixos-unstable";
+  inputs = {
+    # shorthand for github.com/NixOS/nixpkgs...
+    # nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
-		home-manager = {
-			# url = "github:nix-community/home-manager/release-25.11";
-			url = "github:nix-community/home-manager/master";
-			# prevents home-manager from pulling its own version of nixpkgs, avoiding mismatched package sets
-			inputs.nixpkgs.follows = "nixpkgs";	
-		};
+    home-manager = {
+      # url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
+      # prevents home-manager from pulling its own version of nixpkgs, avoiding mismatched package sets
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-	};
+  };
 
-	outputs = { self, nixpkgs, home-manager, nix-darwin, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-darwin,
+      ...
+    }:
     let
       user = import ./lib/user.nix;
     in
@@ -30,12 +37,12 @@
           specialArgs = { inherit user; };
           modules = [
             ./hosts/macos/parker-m3/configuration.nix
-          ];   
+          ];
         };
       };
       nixosConfigurations = {
         parker-desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux"; 
+          system = "x86_64-linux";
           specialArgs = { inherit user; };
           modules = [
             ./hosts/nixos/parker-desktop/configuration.nix
