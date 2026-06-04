@@ -49,7 +49,10 @@ in
       user = {
         email = user.email;
         name = user.name;
+        signingKey = user.gpgKey;
       };
+      commit.gpgSign = true;
+      tag.gpgSign = true;
     };
   };
   programs.lazygit.enable = true;

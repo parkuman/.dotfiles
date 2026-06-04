@@ -1,17 +1,21 @@
 { pkgs, user, ... }:
+
 let
-  isDarwin = pkgs.stdend.isDarwin;
-in {
+  isDarwin = pkgs.stdenv.isDarwin;
+in
+
+{
   programs.gpg = {
     enable = true;
-    settings.default-key = user.gpgKey;
+    settings = {
+      default-key = user.gpgKey;
+    };
   };
 
   services.gpg-agent = {
     enable = true;
-    enableSshSupport = true;
-    pinentryPackage = if isDarwin
+    pinentry.package = if isDarwin
       then pkgs.pinentry_mac
-      else pkgs.pinentry-curses
+      else pkgs.pinentry-qt;
   };
 }
