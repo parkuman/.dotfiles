@@ -66,6 +66,7 @@
         launchanim = true;
         orientation = "left";
         tilesize = 48;
+        showMissionControlGestureEnabled = true;
       };
 
       finder = {
@@ -74,6 +75,8 @@
 
       trackpad = {
         Clicking = true;
+        TrackpadThreeFingerDrag = false; # this overrides the three fingers up for mission control. Disable it.
+        TrackpadThreeFingerVertSwipeGesture = 2;
       };
     };
   };
