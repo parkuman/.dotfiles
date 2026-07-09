@@ -26,6 +26,7 @@ alias vi="nvim"
 alias lg="lazygit"
 alias sbrc="source ~/.zshrc"
 alias k=kubectl
+alias oc=opencode
 
 # import any work-specific zshrc files
 if [[ -f ~/.config/work/.zshrc ]]; then
