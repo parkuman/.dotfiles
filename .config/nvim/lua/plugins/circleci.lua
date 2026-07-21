@@ -24,6 +24,15 @@ return {
           --   "-c",
           --   "/Users/parker/circleci/circleci-yaml-language-server/bin/start_server -schema=/Users/parker/circleci/circleci-yaml-language-server/schema.json --stdio",
           -- },
+          on_attach = function(client, bufnr)
+            local token = os.getenv("CIRCLE_TOKEN")
+            if token then
+              client.request("workspace/executeCommand", {
+                command = "setToken",
+                arguments = { token },
+              }, nil, bufnr)
+            end
+          end,
         },
       },
       telescope = false,

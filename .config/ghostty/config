@@ -1,3 +1,2 @@
 theme = Gruvbox Dark
 macos-option-as-alt = true
-keybind = shift+enter=text:\x1b\r
