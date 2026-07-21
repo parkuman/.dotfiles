@@ -1,0 +1,4 @@
+os:
+  edit: "nvim --server $NVIM --remote-tab {{filename}}"
+git:
+  overrideGpg: true
