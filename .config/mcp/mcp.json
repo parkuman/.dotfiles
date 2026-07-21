@@ -1,0 +1,42 @@
+{
+  "mcpServers": {
+    "circleci": {
+      "command": "circleci",
+      "args": ["mcp", "start"],
+      "lifecycle": "lazy"
+    },
+    "datadog": {
+      "url": "https://mcp.datadoghq.com/v1/mcp",
+      "lifecycle": "lazy"
+    },
+    "honeycomb": {
+      "url": "https://mcp.honeycomb.io/mcp",
+      "lifecycle": "lazy"
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "lifecycle": "lazy"
+    },
+    "sourcegraph": {
+      "url": "https://circleci.sourcegraphcloud.com/.api/mcp",
+      "lifecycle": "lazy"
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/mcp"],
+      "lifecycle": "lazy"
+    },
+    "loki": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "LOKI_URL=https://loki.infra.circleci.com",
+        "loki-mcp-server:latest"
+      ],
+      "lifecycle": "lazy"
+    }
+  }
+}
