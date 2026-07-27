@@ -2,7 +2,7 @@
   "lastChangelogVersion": "0.81.1",
   "theme": "gruvbox-dark",
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-sonnet-5",
+  "defaultModel": "claude-opus-4-8",
   "editorPaddingX": 1,
   "outputPad": 1,
   "enabledModels": [
@@ -10,9 +10,8 @@
     "anthropic/claude-opus-4-8"
   ],
   "packages": [
-    "npm:pi-mcp-adapter@2.11.0",
+    "npm:pi-mcp-adapter@2.15.0",
     "npm:pi-lens@3.8.71"
-
   ],
   "hideThinkingBlock": false
 }
