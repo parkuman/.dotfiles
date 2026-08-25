@@ -37,6 +37,13 @@
         "loki-mcp-server:latest"
       ],
       "lifecycle": "lazy"
+    },
+    "rollbar": {
+      "command": "npx",
+      "args": ["-y", "@rollbar/mcp-server@latest"],
+      "env": {
+        "ROLLBAR_ACCESS_TOKEN": "${ROLLBAR_ACCOUNT_ACCESS_TOKEN}"
+      }
     }
   }
 }
