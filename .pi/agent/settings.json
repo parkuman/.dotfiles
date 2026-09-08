@@ -1,17 +1,14 @@
 {
-  "lastChangelogVersion": "0.81.1",
+  "lastChangelogVersion": "0.84.4",
   "theme": "gruvbox-dark",
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-8",
+  "defaultModel": "claude-opus-4-6",
   "editorPaddingX": 1,
   "outputPad": 1,
-  "enabledModels": [
-    "anthropic/claude-sonnet-5",
-    "anthropic/claude-opus-4-8"
-  ],
   "packages": [
     "npm:pi-mcp-adapter@2.15.0",
     "npm:pi-lens@3.8.71"
   ],
-  "hideThinkingBlock": false
+  "hideThinkingBlock": false,
+  "defaultThinkingLevel": "high"
 }
